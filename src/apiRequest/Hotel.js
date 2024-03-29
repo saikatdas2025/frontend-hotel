@@ -1,11 +1,9 @@
 import axios from "axios";
+const url = "https://hotel-backend-saikat.vercel.app/api/v1/hotels";
 
 export const createHotel = async (data) => {
   try {
-    const response = await axios.post(
-      "http://localhost:8000/api/v1/hotels/add-hotels",
-      data
-    );
+    const response = await axios.post(`${url}/add-hotels`, data);
     return response;
   } catch (error) {
     return error;
@@ -14,9 +12,7 @@ export const createHotel = async (data) => {
 
 export const getAllHotels = async () => {
   try {
-    const response = await axios.get(
-      "http://localhost:8000/api/v1/hotels/getAllHotels"
-    );
+    const response = await axios.get(`${url}/getAllHotels`);
     return response;
   } catch (error) {
     return error;
@@ -26,7 +22,7 @@ export const getAllHotels = async () => {
 export const getHotelByid = async (hotelId) => {
   try {
     const response = await axios.post(
-      `http://localhost:8000/api/v1/hotels/getHotelByid/${hotelId}`
+      `{url}/getAllHotels/getHotelByid/${hotelId}`
     );
     return response;
   } catch (error) {
@@ -37,7 +33,7 @@ export const getHotelByid = async (hotelId) => {
 export const updateHotel = async (hotelId, data) => {
   try {
     const response = await axios.post(
-      `http://localhost:8000/api/v1/hotels/updateHotel/${hotelId}`,
+      `${url}/getAllHotels/updateHotel/${hotelId}`,
       data
     );
     return response;
